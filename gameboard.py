@@ -27,7 +27,12 @@ class Gameboard:
         """Set proper values of self.fields - 0 when buffer can move and -1 which are borders (undeletable)"""
 
         # When start all fields are set to 0 (except borders set which are set to -1)
-        self.fields = [[config.EMPTY_BLOCK for i in range(0, config.BOARD_COLUMNS)] for j in range(0, config.BOARD_ROWS)]
+        try:
+            self.fields = [[config.EMPTY_BLOCK for i in range(0, config.BOARD_COLUMNS)] for j in range(0, config.BOARD_ROWS)]
+        except Exception as inst:
+            print(type(inst))  # the exception instance
+            print(inst.args)  # arguments stored in .args
+            print(inst)
 
         for i in range(0, config.BOARD_ROWS-1): # except the last row
             # set first and last column of i row as border
