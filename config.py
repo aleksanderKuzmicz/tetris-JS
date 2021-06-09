@@ -16,11 +16,12 @@ BOARD_ROWS = 22 + 1  # +1 stand for bottom border line
 # Colors used within game to draw, you can simply add your favorite color and use it within game
 class Color(enum.Enum):
     """Make human-readable aliases of colors used in game"""
-    BLACK = (0, 0, 0)
-    DARKRED = (100, 10, 10)
-    LIGHTBLUE = (173, 216, 230)
-    ORANGE = (255, 165, 0)
-    RED = (220, 20, 60)
+    BLACK = (81, 70, 90)
+    DARKRED = (186, 202, 239)
+    # LIGHTBLUE = (173, 216, 230)
+    LIGHTBLUE = (243, 144, 15) # tetromino
+    ORANGE = (252, 178, 81)
+    RED = (198, 162, 226)
 
 
 BORDER_BLOCK = -1
@@ -51,7 +52,7 @@ GAME_BOARD_COORDS = Gameboard_coords_on_screen(
     left=BOARD_WITH_BORDER_COORDS.left + BLOCK_SIZE,
 )
 
-GAME_SINGLE_FRAME_SEC = 0.0001  # interval between single steps
+GAME_SINGLE_FRAME_SEC = 0.001  # interval between single steps
 TIME_STEPS_TO_FALL_BUFFER = 200  # how many steps is needed to fall tetromino one block down
 
 TETROMINO_SHAPES = {
@@ -98,3 +99,5 @@ TETROMINO_SHAPES = {
         [0, 0, 0, 0],
     ],
 }
+
+MALICIOUS_LEVEL = 9
