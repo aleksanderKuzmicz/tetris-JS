@@ -12,7 +12,7 @@ import random
 """
 
 
-class Evaluator():
+class Evaluator:
 
     @staticmethod
     def simulate_falling(board: gameboard.Gameboard, buffer: tetromino.Tetromino):
